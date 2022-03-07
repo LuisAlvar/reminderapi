@@ -1,0 +1,18 @@
+version: '3'
+services:
+  sqlserverdb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment: 
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "1234@techwell"
+    ports:
+      - "1480:1480"
+  mainapi:
+    build: .
+    environment:
+      DbServer: "sqlserverdb"
+      DbPort: "1480"
+      DbPassword: "1234@techwell"
+      DbName: "ReminderDb"
+    ports:
+      - "8080:80"
