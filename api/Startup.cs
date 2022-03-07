@@ -35,8 +35,8 @@ namespace api
             var password = Configuration["DbPassword"] ?? Configuration.GetValue<string>("ConnectionStrings:DbPassword");
             var database = Configuration["DbName"] ?? Configuration.GetValue<string>("ConnectionStrings:DbName");
             EFConnectionString = $"Server={server},{port};Initial Catalog={database};User ID={user};Password={password}";
-
-            services.AddDbContext<APIDbContext>(options => options.UseSqlServer(EFConnectionString));
+            System.Console.WriteLine(EFConnectionString);
+            //services.AddDbContext<APIDbContext>(options => options.UseSqlServer(EFConnectionString));
             
             services.AddControllers();
         }
@@ -49,7 +49,7 @@ namespace api
                 app.UseDeveloperExceptionPage();
             }
 
-            DbContextMigrations.InitialMigrate(app);
+            //DbContextMigrations.InitialMigrate(app);
 
             app.UseHttpsRedirection();
 
