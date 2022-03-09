@@ -11,5 +11,5 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-  - stage: Azure dev pipeline 
-    displayName: Azure dev pipeline
+  - stage: DummyAzureStage
+    displayName: 'Azure dev pipeline'
