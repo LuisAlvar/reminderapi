@@ -12,6 +12,4 @@ pool:
 
 stages:
   - stage: Azure dev pipeline 
-    display: Azure dev pipeline
-    bash: | 
-      echo "Running"
+    displayName: Azure dev pipeline
